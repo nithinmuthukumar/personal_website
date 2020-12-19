@@ -2,18 +2,23 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'dart:math';
 class BouncingBallDemo extends StatefulWidget {
-  _BouncingBallDemoState createState() => _BouncingBallDemoState();
+  final double initX;
+  const BouncingBallDemo ({ Key key, this.initX }): super(key: key);
+
+  @override
+  BouncingBall createState() => BouncingBall();
 }
 
-class _BouncingBallDemoState extends State<BouncingBallDemo> with TickerProviderStateMixin {
+class BouncingBall extends State<BouncingBallDemo> with TickerProviderStateMixin {
   AnimationController controller;
   double dx = 260;
   double dy = 0;
-  double vx = 0.6;
+  double vx = 0.8;
   double vy = 0;
   Color color = [Colors.red,Colors.green,Colors.blue,Colors.purple,Colors.pink][Random().nextInt(5)];
   void initState() {
     super.initState();
+    dx+=widget.initX;
     controller = AnimationController(
       vsync: this,
       duration: Duration(seconds: 1),
@@ -46,7 +51,7 @@ class _BouncingBallDemoState extends State<BouncingBallDemo> with TickerProvider
   Widget build(BuildContext context) {
 
     return Container(
-        margin: EdgeInsets.only(bottom:max(0,dy),left: max(dx,0)),
+        margin: EdgeInsets.only(bottom:max(0,dy),left: max(dx,0),top:20),
 
 
         child: Container(
