@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:personal_website/widgets/TypingText.dart';
+import 'package:personal_website/widgets/typing_text.dart';
 
 class AboutPage extends StatelessWidget {
   @override

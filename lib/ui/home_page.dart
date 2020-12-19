@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:personal_website/widgets/bouncing_ball.dart';
 import 'package:personal_website/widgets/centered_view.dart';
+import 'package:personal_website/widgets/expanding_image.dart';
+import 'dart:js' as js;
 class HomePage extends StatefulWidget {
   @override
   State<HomePage> createState() {
@@ -48,8 +50,89 @@ class _HomePageState extends State<HomePage> {
 
                 ],
               ),
+
+              Padding(
+                padding: EdgeInsets.fromLTRB(200, 0, 0, 50),
+                child: Row(
+
+
+                  children: [
+
+                    Material(
+                      // needed
+                      color: Colors.transparent,
+                      child: InkWell(
+                        onTap: () => (){
+                          js.context.callMethod('open', ['https://stackoverflow.com/questions/ask']);
+
+                        },
+                        splashColor: Colors.red,// needed
+                        child: ExpandingImage(imagePath: "assets/itch_icon.png",
+                          finalHeight: 100,
+                          duration: Duration(milliseconds: 1000),
+                          delay: Duration(milliseconds:7200),),
+                      ),
+                    ),
+                    SizedBox(width: 10,),
+                    Material(
+                      // needed
+                      color: Colors.transparent,
+                      child: InkWell(
+                        onTap: () => (){
+                          js.context.callMethod('open', ['https://stackoverflow.com/questions/ask']);
+
+                        },
+                        splashColor: Colors.blue,// needed
+                        child: ExpandingImage(imagePath: "assets/github_icon.png",
+                          finalHeight: 110,
+                          duration: Duration(milliseconds: 1000),
+                          delay: Duration(milliseconds: 7400),),
+                      ),
+                    ),
+
+                    SizedBox(width: 10,),
+
+                    Material(
+                      // needed
+                      color: Colors.transparent,
+                      child: InkWell(
+                        onTap: () => (){
+                          js.context.callMethod('open', ['https://stackoverflow.com/questions/ask']);
+
+                        },
+                        splashColor: Colors.blue,// needed
+                        child: ExpandingImage(imagePath: "assets/linkedin_icon.png",
+                          finalHeight: 100,
+                          duration: Duration(milliseconds: 1000),
+                          delay: Duration(milliseconds: 7600),),
+                      ),
+                    ),
+                    SizedBox(width: 10,),
+
+                    Material(
+                      // needed
+                      color: Colors.transparent,
+                      child: InkWell(
+                        onTap: () => (){
+                          js.context.callMethod('open', ['https://stackoverflow.com/questions/ask']);
+
+                        }, //
+                        splashColor: Colors.purple,// needed
+                        child: ExpandingImage(imagePath: "assets/devpost_icon.png",
+                          finalHeight: 115,
+                          duration: Duration(milliseconds: 1000),
+                          delay: Duration(milliseconds: 7800),),
+                      ),
+                    )
+                  ],
+                ),
+              ),
+
+
+
             ],
           ),
+
 
 
 
