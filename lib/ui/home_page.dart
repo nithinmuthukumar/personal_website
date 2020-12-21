@@ -3,6 +3,7 @@ import 'package:personal_website/widgets/bouncing_ball.dart';
 import 'package:personal_website/widgets/centered_view.dart';
 import 'package:personal_website/widgets/expanding_image.dart';
 import 'dart:js' as js;
+import 'dart:html' as html;
 class HomePage extends StatefulWidget {
   @override
   State<HomePage> createState() {
@@ -11,6 +12,12 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  @override
+  void initState() {
+
+    // TODO: implement initState
+    super.initState();
+  }
 
 
   @override
@@ -52,77 +59,56 @@ class _HomePageState extends State<HomePage> {
               ),
 
               Padding(
-                padding: EdgeInsets.fromLTRB(200, 0, 0, 50),
+                padding: EdgeInsets.fromLTRB(50, 0, 0, 50),
                 child: Row(
 
 
                   children: [
 
-                    Material(
-                      // needed
-                      color: Colors.transparent,
-                      child: InkWell(
-                        onTap: () => (){
-                          js.context.callMethod('open', ['https://stackoverflow.com/questions/ask']);
+                    FlatButton(
 
-                        },
-                        splashColor: Colors.red,// needed
-                        child: ExpandingImage(imagePath: "assets/itch_icon.png",
-                          finalHeight: 100,
-                          duration: Duration(milliseconds: 1000),
-                          delay: Duration(milliseconds:7200),),
-                      ),
-                    ),
-                    SizedBox(width: 10,),
-                    Material(
-                      // needed
-                      color: Colors.transparent,
-                      child: InkWell(
-                        onTap: () => (){
-                          js.context.callMethod('open', ['https://stackoverflow.com/questions/ask']);
+                      onPressed: (){
+                        html.window.open('https://itch.io/profile/nithinmuthukumar', '_blank');
+                      },
+                      splashColor: Colors.red,
+                      child: ExpandingImage(imagePath: "assets/itch_icon.png",
+                        finalHeight: 100,
+                        duration: Duration(milliseconds: 1000),
+                        delay: Duration(milliseconds:7200),),
 
-                        },
-                        splashColor: Colors.blue,// needed
-                        child: ExpandingImage(imagePath: "assets/github_icon.png",
-                          finalHeight: 110,
-                          duration: Duration(milliseconds: 1000),
-                          delay: Duration(milliseconds: 7400),),
-                      ),
                     ),
 
                     SizedBox(width: 10,),
+                    FlatButton(
+                      onPressed: (){
+                        html.window.open('https://github.com/nithinmuthukumar', '_blank');
+                      },
+                      child: ExpandingImage(imagePath: "assets/github_icon.png",
+                        finalHeight: 110,
+                        duration: Duration(milliseconds: 1000),
+                        delay: Duration(milliseconds: 7400),),
+                    ),
 
-                    Material(
-                      // needed
-                      color: Colors.transparent,
-                      child: InkWell(
-                        onTap: () => (){
-                          js.context.callMethod('open', ['https://stackoverflow.com/questions/ask']);
-
-                        },
-                        splashColor: Colors.blue,// needed
-                        child: ExpandingImage(imagePath: "assets/linkedin_icon.png",
-                          finalHeight: 100,
-                          duration: Duration(milliseconds: 1000),
-                          delay: Duration(milliseconds: 7600),),
-                      ),
+                    SizedBox(width: 10,),
+                    FlatButton(
+                      onPressed: (){
+                        html.window.open('https://www.linkedin.com/in/nithin-muthukumar-681219162/', '_blank');
+                      },
+                      child: ExpandingImage(imagePath: "assets/linkedin_icon.png",
+                        finalHeight: 100,
+                        duration: Duration(milliseconds: 1000),
+                        delay: Duration(milliseconds: 7600),),
                     ),
                     SizedBox(width: 10,),
+                    FlatButton(
+                      onPressed: (){
+                        html.window.open('https://devpost.com/nithinmuthuklumar?ref_content=user-portfolio&ref_feature=portfolio&ref_medium=global-nav', '_blank');
 
-                    Material(
-                      // needed
-                      color: Colors.transparent,
-                      child: InkWell(
-                        onTap: () => (){
-                          js.context.callMethod('open', ['https://stackoverflow.com/questions/ask']);
-
-                        }, //
-                        splashColor: Colors.purple,// needed
-                        child: ExpandingImage(imagePath: "assets/devpost_icon.png",
-                          finalHeight: 115,
-                          duration: Duration(milliseconds: 1000),
-                          delay: Duration(milliseconds: 7800),),
-                      ),
+                      },
+                      child: ExpandingImage(imagePath: "assets/devpost_icon.png",
+                        finalHeight: 125,
+                        duration: Duration(milliseconds: 1000),
+                        delay: Duration(milliseconds: 7800),),
                     )
                   ],
                 ),

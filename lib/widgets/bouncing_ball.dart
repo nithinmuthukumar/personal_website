@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'package:flutter/material.dart';
 import 'dart:math';
+import 'dart:html' as html;
 class BouncingBallDemo extends StatefulWidget {
   final double initX;
   const BouncingBallDemo ({ Key key, this.initX }): super(key: key);
@@ -30,7 +31,6 @@ class BouncingBall extends State<BouncingBallDemo> with TickerProviderStateMixin
     controller.addListener(() {
       setState((){
         dx-=vx;
-        print(dy);
         if(dy>100){
           vy-=controller.value/1000;
 
@@ -39,7 +39,7 @@ class BouncingBall extends State<BouncingBallDemo> with TickerProviderStateMixin
         }
         dy+=vy;
         if(dx<0&&dy<0){
-          controller.reset();
+          controller.stop(canceled: true);
         }
       });
     });

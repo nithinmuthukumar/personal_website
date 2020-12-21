@@ -2,14 +2,15 @@ import 'dart:ui';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'dart:js' as js;
+import 'package:personal_website/constants/styles.dart';
+import 'dart:html' as html;
 class ProjectCard extends StatefulWidget {
   final String title;
   final Image img;
   final String details;
-  final String gitLink;
+  final Map<String,String> links;
 
-  ProjectCard(this.title, this.img, this.details, this.gitLink);
+  ProjectCard(this.title, this.img, this.details, this.links);
   @override
   State<ProjectCard> createState() {
     return _ProjectCardState();
@@ -19,23 +20,51 @@ class ProjectCard extends StatefulWidget {
 class _ProjectCardState extends State<ProjectCard> {
   @override
   Widget build(BuildContext context) {
+    print(widget.img);
     return Card(
-      child: InkWell(
-        child: Container(
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage("assets/logo.png"),
-              fit: BoxFit.fitWidth,
-              alignment: Alignment.topCenter,
+
+
+
+      elevation: 10,
+      child: Column(
+        children: [
+          ListTile(
+            leading: Icon(Icons.videogame_asset_rounded),
+            title: Text(widget.title,style: projectCardTitleStyle),
+            subtitle: Text(widget.details),
+
+
+
+          ),
+          Padding(
+            padding: EdgeInsets.fromLTRB(10, 0, 10, 0),
+            child: ClipRRect(
+
+              borderRadius: BorderRadius.circular(8.0),
+              child: widget.img,
+
             ),
           ),
-          child: Text("YOUR TEXT"),
-        ),
-        onTap:(){
-          js.context.callMethod('open', ['https://stackoverflow.com/questions/ask']);
-        },
+          // Row(
+          //   mainAxisAlignment: MainAxisAlignment.end,
+          //   children: [
+          //     for(var item in widget.links.entries)
+          //       FlatButton(
+          //         minWidth: 0,
+          //         child: Image.asset("assets/"+item.key+"_icon.png",width:30),
+          //         onPressed: (){
+          //           html.window.open(item.value, '_blank');
+          //         },
+          //       )
+          //   ]
+          //
+          // )
+          
 
+        ],
       ),
+      shadowColor: Colors.red,
+
 
     );
 

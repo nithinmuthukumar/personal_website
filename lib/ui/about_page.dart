@@ -24,7 +24,7 @@ class AboutPage extends StatelessWidget {
               duration: Duration(milliseconds: 3000),
               delay: Duration(milliseconds: 5500)),
           SizedBox(height: 10),
-          TypingText(text: "In my free time I enjoy playing league of legends and magic the gathering.\n",
+          TypingText(text: "In my free time I enjoy playing League of Legends and Magic the Gathering.\n",
               duration: Duration(milliseconds: 3000),
               delay: Duration(milliseconds: 9000)),
           SizedBox(height: 10),
