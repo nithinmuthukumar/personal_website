@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:personal_website/constants/styles.dart';
 import 'package:personal_website/routes/routes.dart';
 
 import 'navigation_item.dart';
-
+import 'dart:html' as html;
 
 class NavigationBar extends StatefulWidget {
   @override
@@ -40,12 +41,17 @@ class _NavigationBarState extends State<NavigationBar> {
                 routeName: routeAbout,
                 onHighlight: onHighlight,
               ),
-              NavigationItem(
-                selected: index == 2,
-                title: 'Contact',
-                routeName: routeContacts,
-                onHighlight: onHighlight,
+              GestureDetector(
+                onTap: () {
+                  html.window.open("https://api.flutter.dev/flutter/widgets/Expanded-class.html", '_blank');
+
+                },
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 50.0),
+                  child: Text('Resume', style: kPageTitleStyle,)
+                ),
               ),
+
               NavigationItem(
                 selected: index == 3,
                 title: 'Projects',
@@ -68,8 +74,8 @@ class _NavigationBarState extends State<NavigationBar> {
       case routeAbout:
         changeHighlight(1);
         break;
-      case routeContacts:
-        changeHighlight(2);
+      case routeProjects:
+        changeHighlight(3);
         break;
     }
   }

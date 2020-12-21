@@ -10,15 +10,15 @@ class ProjectsPage extends StatelessWidget {
         crossAxisSpacing: 10,
         mainAxisSpacing: 50,
 
-        children: [ProjectCard("Soulless",Image.asset("assets/soulless.png",width: 300,height: 300,),
+        children: [ProjectCard("Soulless","assets/soulless.png",
             "Platformer created with Unity for the Ludum Dare Game Jam",
             {"github":"https://github.com/nithinmuthukumar/Soulless",
               "itch":"https://nithinmuthukumar.itch.io/soulless"}),
 
-          ProjectCard("Conquest", Image.asset("assets/Conquest.png",width: 300,height: 300),
+          ProjectCard("Conquest", "assets/Conquest.png",
               "Topdown battle royale game created with Libgdx for ICS4U Final Project.",
               {"github":"https://github.com/nithinmuthukumar/Conquest"}),
-          ProjectCard("LastStand", Image.asset("assets/LastStand.png",width: 300,height: 300),
+          ProjectCard("LastStand", "assets/LastStand.png",
               "Tower Defence game created with Libgdx for ICS4U.",
               {"github":"https://github.com/nithinmuthukumar/LastStand"}),
 

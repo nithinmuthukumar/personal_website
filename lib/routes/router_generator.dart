@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:personal_website/routes/routes.dart';
 import 'package:personal_website/ui/about_page.dart';
-import 'package:personal_website/ui/contact_page.dart';
 import 'package:personal_website/ui/home_page.dart';
 import 'package:personal_website/ui/projects_page.dart';
 
@@ -15,9 +14,6 @@ class RouteGenerator {
         break;
       case routeAbout:
         return MaterialPageRoute(builder: (_) => AboutPage());
-        break;
-      case routeContacts:
-        return MaterialPageRoute(builder: (_) => ContactPage());
         break;
       case routeProjects:
         return MaterialPageRoute(builder: (_) => ProjectsPage());
