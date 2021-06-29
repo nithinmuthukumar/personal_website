@@ -21,44 +21,47 @@ class _ProjectCardState extends State<ProjectCard> {
   @override
   Widget build(BuildContext context) {
 
-    return Card(
+    return Tooltip(
+      message: widget.details,
+      child: Card(
 
 
 
-      elevation: 10,
-      child: Column(
-        children: [
-          ListTile(
-            leading: Icon(Icons.videogame_asset_rounded),
-            title: Text(widget.title,style: projectCardTitleStyle),
-            subtitle: Text(widget.details),
+        elevation: 10,
+        child: Column(
+          children: [
+            ListTile(
+              leading: Icon(Icons.videogame_asset_rounded),
+              title: Text(widget.title,style: projectCardTitleStyle),
 
 
 
-          ),
-          Expanded(child: Image.asset(widget.imgPath)),
-          Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                for(var item in widget.links.entries)
-                  FlatButton(
-                    minWidth: 0,
-                    child: Image.asset("assets/"+item.key+"_icon.png",width:30),
-                    onPressed: (){
-                      html.window.open(item.value, '_blank');
-                    },
-                  )
-              ]
 
-          )
+            ),
+            Expanded(child: Image.asset(widget.imgPath)),
+            Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  for(var item in widget.links.entries)
+                    FlatButton(
+                      minWidth: 0,
+                      child: Image.asset("assets/"+item.key+"_icon.png",width:30),
+                      onPressed: (){
+                        html.window.open(item.value, '_blank');
+                      },
+                    )
+                ]
+
+            )
 
 
 
-        ],
+          ],
+        ),
+        shadowColor: Colors.red,
+
+
       ),
-      shadowColor: Colors.red,
-
-
     );
 
   }
