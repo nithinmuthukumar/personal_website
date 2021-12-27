@@ -6,7 +6,7 @@ class ExpandingImage extends StatefulWidget {
   final Duration delay;
   final Duration duration;
 
-  const ExpandingImage ({ Key key, this.imagePath, this.duration, this.delay,this.finalHeight }): super(key: key);
+  const ExpandingImage ({ required this.imagePath, required this.duration, required this.delay,required this.finalHeight }): super();
   @override
   State<ExpandingImage> createState() {
     return _ExpandingImageState();
@@ -14,7 +14,7 @@ class ExpandingImage extends StatefulWidget {
 }
 
 class _ExpandingImageState extends State<ExpandingImage> with TickerProviderStateMixin{
-  AnimationController controller;
+  late AnimationController controller;
   @override
   void initState() {
     super.initState();

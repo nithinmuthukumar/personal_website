@@ -4,14 +4,14 @@ import 'dart:math';
 import 'dart:html' as html;
 class BouncingBallDemo extends StatefulWidget {
   final double initX;
-  const BouncingBallDemo ({ Key key, this.initX }): super(key: key);
+  const BouncingBallDemo ({  required this.initX }): super();
 
   @override
   BouncingBall createState() => BouncingBall();
 }
 
 class BouncingBall extends State<BouncingBallDemo> with TickerProviderStateMixin {
-  AnimationController controller;
+  late AnimationController controller;
   double dx = 260;
   double dy = 0;
   double vx = 0.8;
@@ -27,6 +27,7 @@ class BouncingBall extends State<BouncingBallDemo> with TickerProviderStateMixin
       upperBound: 200,
 
     );
+
 
     controller.addListener(() {
       setState((){

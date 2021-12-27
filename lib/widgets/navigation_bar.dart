@@ -43,7 +43,7 @@ class _NavigationBarState extends State<NavigationBar> {
               ),
               GestureDetector(
                 onTap: () {
-                  html.window.open("https://api.flutter.dev/flutter/widgets/Expanded-class.html", '_blank');
+                  html.window.open("http://159.89.116.36/images/NithinMuthukumarResume.pdf", '_blank');
 
                 },
                 child: Padding(

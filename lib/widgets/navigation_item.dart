@@ -11,17 +11,17 @@ class NavigationItem extends StatelessWidget {
   final Function onHighlight;
 
   const NavigationItem({
-    @required this.title,
-    @required this.routeName,
-    @required this.selected,
-    @required this.onHighlight,
+    required this.title,
+    required this.routeName,
+    required this.selected,
+    required this.onHighlight,
   });
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () {
-        navKey.currentState.pushNamed(routeName);
+        navKey.currentState!.pushNamed(routeName);
         onHighlight(routeName);
       },
       child: Padding(
@@ -29,7 +29,7 @@ class NavigationItem extends StatelessWidget {
         child: InteractiveNavItem(
           text: title,
           routeName: routeName,
-          selected: selected,
+          selected: selected
         ),
       ),
     );

@@ -7,7 +7,7 @@ class TypingText extends StatefulWidget {
   final Duration delay;
 
 
-  const TypingText ({ Key key, this.text, this.duration, this.delay  }): super(key: key);
+  const TypingText ({required this.text, required this.duration, required this.delay  }): super();
 
 
 
@@ -22,8 +22,8 @@ class TypingText extends StatefulWidget {
 
 class _TypingTextState extends State<TypingText> with TickerProviderStateMixin {
   int index=0;
-  AnimationController controller;
-  Animation<int> typeAnimation;
+  late AnimationController controller;
+  late Animation<int> typeAnimation;
   @override
   void initState() {
     super.initState();

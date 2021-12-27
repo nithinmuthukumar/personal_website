@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       builder: (_, child) => AppView(
-        child: child,
+        child: child!,
       ),
       initialRoute: routeHome,
       navigatorKey: navKey,

@@ -19,6 +19,6 @@ class RouteGenerator {
         return MaterialPageRoute(builder: (_) => ProjectsPage());
         break;
     }
-    return null;
+    return MaterialPageRoute(builder: (_) => HomePage());
   }
 }

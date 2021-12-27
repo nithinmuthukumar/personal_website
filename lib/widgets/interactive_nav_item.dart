@@ -9,7 +9,7 @@ class InteractiveNavItem extends MouseRegion {
       html.window.document.querySelectorAll('flt-glass-pane')[0];
 
   InteractiveNavItem(
-      {Widget child, String text, String routeName, bool selected})
+      {required String text, required String routeName, required bool selected})
       : super(
           onHover: (PointerHoverEvent evt) {
             appContainer.style.cursor = 'pointer';
@@ -31,9 +31,9 @@ class InteractiveText extends StatefulWidget {
   final bool selected;
 
   const InteractiveText({
-    @required this.text,
-    this.routeName,
-    this.selected,
+    required this.text,
+    required this.routeName,
+    required this.selected,
   });
 
   @override

@@ -38,7 +38,7 @@ class _HomePageState extends State<HomePage> {
                     height: 30,
                   ),
                   Text(
-                    'Computer Science Student at UofT Scarborough.\nSeeking a coop for 2021.',
+                    'Second Year Computer Science Student.\nSeeking a coop for 2022.',
                     style: TextStyle(fontSize: 21, height: 1.7),
                   ),
                 ],

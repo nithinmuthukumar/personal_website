@@ -5,7 +5,7 @@ import 'package:personal_website/widgets/navigation_bar.dart';
 class AppView extends StatefulWidget {
   final Widget child;
 
-  const AppView({@required this.child});
+  const AppView({required this.child});
 
   @override
   _AppViewState createState() => _AppViewState();
