@@ -5,12 +5,12 @@ import 'package:personal_website/routes/routes.dart';
 import 'navigation_item.dart';
 import 'dart:html' as html;
 
-class NavigationBar extends StatefulWidget {
+class NavigationBarr extends StatefulWidget {
   @override
   _NavigationBarState createState() => _NavigationBarState();
 }
 
-class _NavigationBarState extends State<NavigationBar> {
+class _NavigationBarState extends State<NavigationBarr> {
   int index = 0;
 
   @override

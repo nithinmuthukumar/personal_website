@@ -17,7 +17,7 @@ class _AppViewState extends State<AppView> {
     return Scaffold(
       backgroundColor: Colors.white,
       body: Column(
-        children: [NavigationBar(), Expanded(child: widget.child)],
+        children: [NavigationBarr(), Expanded(child: widget.child)],
       ),
     );
   }
