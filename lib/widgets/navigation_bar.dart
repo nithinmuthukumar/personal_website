@@ -43,7 +43,7 @@ class _NavigationBarState extends State<NavigationBarr> {
               ),
               GestureDetector(
                 onTap: () {
-                  html.window.open("http://159.89.116.36/images/NithinMuthukumarResume.pdf", '_blank');
+                  html.window.open("http://159.89.116.36/images/Resume.pdf", '_blank');
 
                 },
                 child: Padding(
